@@ -1,7 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>Helel's Game Development Portfolio | Innovative Game Projects</title>
+  <meta name="description" content="Explore Helel's game development portfolio featuring innovative game projects, creative design, and immersive experiences." />
+  <meta name="author" content="Helel" />
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="Helel's Game Development Portfolio | Innovative Game Projects">
+  <meta property="og:description" content="Explore Helel's game development portfolio featuring innovative game projects, creative design, and immersive experiences.">
+  <meta property="og:url" content="https://Hel3l.github.io">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Helel",
+    "url": "https://Hel3l.github.io",
+    "sameAs": [
+      "https://twitter.com/yourprofile",
+      "https://www.linkedin.com/in/yourprofile",
+      "https://github.com/Hel3l"
+    ],
+    "jobTitle": "Game Developer",
+    "description": "Helel creates innovative game projects that offer immersive and engaging experiences."
+  }
+  </script>
+
+  <!-- CSS Styles -->
+  <style>
+    /* CSS Variables for theme */
+    :root {
+      --primary-color: #1e3c72;
+      --secondary-color: #2a5298;
+      --accent-color: #ffd700;
+      --bg-dark: #121212;
+      --text-color: #fff;
+      --header-height: 70px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .hero .btn {
+      padding: 0.75rem 2rem;
+      border: none;
+      background: var(--accent-color);
+      color: var(--bg-dark);
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 25px;
+      transition: background 0.3s ease;
+    }
+
+    .hero .btn:hover {
+      background: #e6c200;
+    }
+
+    /* Main Content */
+    main {
+      padding-top: var(--header-height);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-item {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+    }
+
+    .portfolio-item .content {
+      padding: 1rem;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      header {
+        padding: 0 1rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
-  <p> TEST </p>
+<body>
+
+  <!-- Header Navigation -->
+  <header>
+    <div class="logo">Helel</div>
+    <nav>
+      <ul>
+        <li><a href="#about" title="About Me">About</a></li>
+        <li><a href="#portfolio" title="View Portfolio">Portfolio</a></li>
+        <li><a href="#contact" title="Contact Me">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Helel's Game Development</h1>
+    <p>Crafting immersive worlds and unforgettable experiences through innovative game design.</p>
+    <button class="btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'});">View Portfolio</button>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Section -->
+    <section id="about" aria-labelledby="about-heading">
+      <h2 class="section-title" id="about-heading">About Me</h2>
+      <p style="text-align: center;">
+        I am Helel—a passionate game developer dedicated to creating engaging and innovative experiences. With a deep love for immersive storytelling and cutting-edge design, I strive to bring unique gaming projects to life.
+      </p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" aria-labelledby="portfolio-heading">
+      <h2 class="section-title" id="portfolio-heading">Portfolio</h2>
+      <div class="portfolio-items">
+        <!-- Portfolio Item 1 -->
+        <article class="portfolio-item">
+          <img src="https://via.placeholder.com/600x400.png?text=Game+Project+1" alt="Screenshot of Game Project 1">
+          <div class="content">
+            <h3>Project Title 1</h3>
+            <p>A brief description of this innovative game project, its mechanics, and creative inspiration.</p>
+          </div>
+        </article>
+        <!-- Portfolio Item 2 -->
+        <article class="portfolio-item">
+          <img src="https://via.placeholder.com/600x400.png?text=Game+Project+2" alt="Screenshot of Game Project 2">
+          <div class="content">
+            <h3>Project Title 2</h3>
+            <p>A brief description of another exciting game project, detailing its unique design elements and gameplay features.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 class="section-title" id="contact-heading">Contact</h2>
+      <div class="contact-info">
+        <p>Feel free to reach out for collaborations or inquiries.</p>
+        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Helel. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Optional JavaScript for smooth scroll (if not using native scrollIntoView) -->
+  <script>
+    // You can add additional interactivity here if needed.
+  </script>
 </body>
 </html>
